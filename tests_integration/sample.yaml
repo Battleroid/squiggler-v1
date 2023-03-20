@@ -1,0 +1,16 @@
+---
+settings:
+  username: elastic
+  password: changeme
+  max_age: 30d
+  target_size: 10 GiB
+notifiers:
+  stdout: true
+clusters:
+  - endpoint: localhost
+    protocol: http
+    port: 9200
+    kibana:
+      port: 5601
+    settings:
+      create_kibana_patterns: true

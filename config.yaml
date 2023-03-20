@@ -1,0 +1,35 @@
+---
+settings:
+  username: squiggler
+  password: scribbles
+  max_age: 30d
+  target_size: 10 GiB
+  mothership:
+    endpoint: supersearch.example.com
+    protocol: https
+    port: 9200
+notifiers:
+  stdout: true
+  slack:
+    url: https://slack-url-webhook-thing-here.com/.../
+  hipchat:
+    url: https://hipchat.example.com/v2/room/.../notification
+    token: your-token
+  graphite:
+    url: carbon.atl01.example.com
+    port: 2003
+    prefix: direct.atl01.prod.elasticsearch
+    chunk_size: 100
+  zabbix:
+    url: app01.zabbix.example.com
+    port: 10051
+    key: elasticsearch.squiggler.status
+    name: elasticsearch.example
+clusters:
+  - endpoint: es-example.example.com
+    protocol: https
+    port: 443
+    settings:
+      create_kibana_patterns: true
+      only_rollover: false
+      exclude_new_indexes: sample-index, sample-other, other-index

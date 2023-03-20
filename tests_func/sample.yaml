@@ -1,0 +1,18 @@
+---
+settings:
+  username: squiggler
+  password: scribbles
+  max_age: 30d
+  target_size: 10 GiB
+  mothership:
+    endpoint: mothership.com
+    protocol: https
+    port: 9200
+notifiers:
+  stdout: true
+clusters:
+  - endpoint: example.com
+    protocol: https
+    port: 9200
+    settings:
+      create_kibana_patterns: true
